@@ -1,0 +1,18 @@
+<suite name="Selenium Regression " verbose="10">
+  <parameter name="selenium.host" value="localhost" />
+  <parameter name="selenium.port" value="3737" />
+  <parameter name="selenium.browser" value="*firefox" />
+  <parameter name="selenium.url" value="http://chestnet-broadway.coursestage.com/" />
+ 
+  <test name="Regression" preserve-order="true">
+    <classes>
+      <class name="test.Regression">
+        <methods>
+          <include name="AdminLogin" />
+          <include name="BrowseUserList" />
+          <include name="NewUser" />
+        </methods>
+      </class>
+    </classes>
+  </test>
+</suite>
