@@ -11,7 +11,10 @@ import com.thoughtworks.selenium.DefaultSelenium;
 import com.thoughtworks.selenium.HttpCommandProcessor;
 import com.thoughtworks.selenium.Selenium;
 
-
+/**
+*
+* @author jbernard
+*/
 
 public class adminloginTest {
 	
@@ -20,7 +23,7 @@ public class adminloginTest {
 
 
   @Test
-  	public void AdminLogin(ITestContext context) {
+  	public static void AdminLogin(ITestContext context) {
   
 			String seleniumHost = context.getCurrentXmlTest().getParameter("selenium.host"); 
 			String seleniumPort = context.getCurrentXmlTest().getParameter("selenium.port"); 

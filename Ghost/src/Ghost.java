@@ -1,5 +1,8 @@
 
-
+/**
+ *
+ * @author jbernard
+ */
 public class Ghost extends javax.swing.JFrame {
 
 

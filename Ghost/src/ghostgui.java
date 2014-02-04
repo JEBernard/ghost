@@ -1,51 +1,45 @@
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import com.thoughtworks.selenium.DefaultSelenium;
+
+import org.uncommons.reportng.*;
  
-
-
-
-
-
 /**
  *
  * @author jbernard
  */
-public class ghostgui extends javax.swing.JFrame {
 
+public class ghostgui extends javax.swing.JFrame {
+	public double testValue;
     /**
+	 * 
+	 */
+	private static final long serialVersionUID = -8439511979386961936L;
+	/**
+	 *
      * Creates new form ghostgui
      */
     public ghostgui() {
         initComponents();   
     }
     
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt){
-    	String clientList[] = {"ACCP"}; 
-    	String testList[] = {"Admin Login", "Browse User List", "Create New User"};
-    	String client = jComboBox1.getSelectedItem().toString();
-    	String test = jComboBox2.getSelectedItem().toString();
-    	 
     
-     if(jComboBox1.getSelectedItem().toString() == "ACCP" && jComboBox2.getSelectedItem().toString() == "Admin Login"){
-    	 try {
-			adminloginTest adminlogin = new adminloginTest();
-			adminlogin.AdminLogin(null); 
-		
-		} catch (Exception e) {
-			throw new IllegalStateException("Failed!",e){
-				
-			} ;
+	
+	public void jButton1MouseClicked(java.awt.event.ActionEvent evt){
+		if (testValue==1){ 
+			adminloginTest.AdminLogin(null); 
+		}
 			
-		} 
-     }
-     
+		}
+		
+    
      
     
-    }
+    
 
    
 	
-	
-
 	/**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -68,12 +62,14 @@ public class ghostgui extends javax.swing.JFrame {
 
         canvas1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         canvas1.setName("canDisplay"); // NOI18N
+        
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Client");
         jLabel1.setToolTipText("");
         jLabel1.setName("lblClient"); // NOI18N
+  
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -85,11 +81,35 @@ public class ghostgui extends javax.swing.JFrame {
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Admin Login", "Browse User List", "Create New User" }));
         jComboBox2.setName("cbSuite"); // NOI18N
+      
+        ActionListener cbSuiteActionListener = new ActionListener() {
+        	
+        	public void actionPerformed(ActionEvent e){
+        		String s = (String) jComboBox2.getSelectedItem();
+        		switch (s) {
+        		case "Admin Login": 
+        			testValue = 1;
+        			break; 
+        		case "Browse User List":
+        			testValue = 2; 
+        			break; 
+        		case "Create New User": 
+        			testValue = 3; 
+        					
+        		}
+        	}
+        	
+        };
+    
+        
 
         jButton1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jButton1.setText("Begin Test");
         jButton1.setToolTipText("");
         jButton1.setName("btnTest"); // NOI18N
+        jComboBox1.setActionCommand("test");
+        jButton1.addActionListener(jComboBox1);
+        
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
