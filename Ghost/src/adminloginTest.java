@@ -18,7 +18,7 @@ import com.thoughtworks.selenium.Selenium;
 
 public class adminloginTest {
 	
-@BeforeTest 
+
 
 
 

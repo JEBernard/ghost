@@ -1,9 +1,14 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import org.testng.TestNG;
 import com.thoughtworks.selenium.DefaultSelenium;
 
+import org.testng.TestListenerAdapter;
 import org.uncommons.reportng.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
  
 /**
  *
@@ -24,22 +29,7 @@ public class ghostgui extends javax.swing.JFrame {
         initComponents();   
     }
     
-    
-	
-	public void jButton1MouseClicked(java.awt.event.ActionEvent evt){
-		if (testValue==1){ 
-			adminloginTest.AdminLogin(null); 
-		}
-			
-		}
-		
-    
-     
-    
-    
 
-   
-	
 	/**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -55,6 +45,16 @@ public class ghostgui extends javax.swing.JFrame {
         jComboBox1 = new javax.swing.JComboBox();
         jComboBox2 = new javax.swing.JComboBox();
         jButton1 = new javax.swing.JButton();
+        jButton1.addMouseListener(new MouseAdapter() {
+        	
+        	public void mouseClicked(MouseEvent arg0) {
+        		TestNG testng = new TestNG();
+        		TestListenerAdapter tla = new TestListenerAdapter();
+        	    testng.setTestClasses(new Class[] {adminloginTest.class});
+        	    testng.addListener(tla);
+        	    testng.run(); 
+        	}
+        });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Ghost");
@@ -82,25 +82,24 @@ public class ghostgui extends javax.swing.JFrame {
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Admin Login", "Browse User List", "Create New User" }));
         jComboBox2.setName("cbSuite"); // NOI18N
       
-        ActionListener cbSuiteActionListener = new ActionListener() {
-        	
-        	public void actionPerformed(ActionEvent e){
-        		String s = (String) jComboBox2.getSelectedItem();
-        		switch (s) {
-        		case "Admin Login": 
-        			testValue = 1;
-        			break; 
-        		case "Browse User List":
-        			testValue = 2; 
-        			break; 
-        		case "Create New User": 
-        			testValue = 3; 
-        					
-        		}
+        jComboBox1.addActionListener(new ActionListener(){
+        	public void actionPerformed(ActionEvent event) {
+        	event.getSource(); 
+        	Object selected = jComboBox1.getSelectedItem(); 
+        	if(selected.toString().equals("ACCP"))
+        		testValue = 1; 
+        	else testValue = 0; 
+        		
+        		
         	}
         	
-        };
+        	
+        
+       
+        });
+       
     
+        
         
 
         jButton1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N

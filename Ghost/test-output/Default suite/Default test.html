@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/0/1</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Feb 04 13:10:49 CST 2014</td>
+<td>Started on:</td><td>Mon Feb 17 14:42:59 CST 2014</td>
 </tr>
-<tr><td>Total time:</td><td>1 seconds (1373 ms)</td>
+<tr><td>Total time:</td><td>1 seconds (1696 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,9 +75,11 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='adminloginTest.AdminLogin()'><b>AdminLogin</b><br>Test class: adminloginTest<br>Parameters: org.testng.TestRunner@1d41dc3</td>
-<td><div><pre>java.lang.IllegalStateException: Can&apos;t start selenium server
-	at adminloginTest.AdminLogin(adminloginTest.java:36)
+<td title='adminloginTest.AdminLogin()'><b>AdminLogin</b><br>Test class: adminloginTest<br>Parameters: org.testng.TestRunner@bec229</td>
+<td><div><pre>java.lang.NumberFormatException: null
+	at java.lang.Integer.parseInt(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at adminloginTest.AdminLogin(adminloginTest.java:42)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -100,14 +102,11 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-Caused by: java.net.BindException: Selenium is already running on port 4444. Or some other service is.
-	at org.openqa.selenium.server.SeleniumServer.start(SeleniumServer.java:491)
-	at org.openqa.selenium.server.SeleniumServer.boot(SeleniumServer.java:300)
-	at adminloginTest.AdminLogin(adminloginTest.java:34)
-	... 22 more
-</pre></div><a href='#' onClick='toggleBox("stack-trace33215930", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace33215930'><pre>java.lang.IllegalStateException: Can&apos;t start selenium server
-	at adminloginTest.AdminLogin(adminloginTest.java:36)
+</pre></div><a href='#' onClick='toggleBox("stack-trace32140129", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace32140129'><pre>java.lang.NumberFormatException: null
+	at java.lang.Integer.parseInt(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at adminloginTest.AdminLogin(adminloginTest.java:42)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -130,11 +129,6 @@ Caused by: java.net.BindException: Selenium is already running on port 4444. Or 
 	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-Caused by: java.net.BindException: Selenium is already running on port 4444. Or some other service is.
-	at org.openqa.selenium.server.SeleniumServer.start(SeleniumServer.java:491)
-	at org.openqa.selenium.server.SeleniumServer.boot(SeleniumServer.java:300)
-	at adminloginTest.AdminLogin(adminloginTest.java:34)
-	... 22 more
 </pre></div></td>
 <td>0</td>
 <td>null</td></tr>
@@ -147,10 +141,10 @@ Caused by: java.net.BindException: Selenium is already running on port 4444. Or 
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='adminloginTest.AdminLogin()'><b>AdminLogin</b><br>Test class: adminloginTest<br>Parameters: org.testng.TestRunner@1d41dc3</td>
+<td title='adminloginTest.AdminLogin()'><b>AdminLogin</b><br>Test class: adminloginTest<br>Parameters: org.testng.TestRunner@bec229</td>
 <td></td>
 <td>0</td>
-<td>adminloginTest@da9e2a</td></tr>
+<td>adminloginTest@b9f657</td></tr>
 </table><p>
 </body>
 </html>
